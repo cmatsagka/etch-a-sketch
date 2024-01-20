@@ -1,6 +1,6 @@
 const container = document.querySelector('#container');
 
-let input = 4;
+let input = prompt("Enter square size: ", "4");
 let gridSize = input ** 2;
 
 for (i = 0; i < gridSize; i++){
