@@ -1,11 +1,13 @@
 const container = document.querySelector('#container');
 
-let input = 16;
+let input = 4;
 let gridSize = input ** 2;
 
-for (i = 0; i <= gridSize; i++){
+for (i = 0; i < gridSize; i++){
     const gridCell = document.createElement('div');
+    gridCell.classList.add('cell');
+
     container.appendChild(gridCell);
-    console.log("cell " + i);
+    gridCell.textContent = "cell" + " " + i;
 }
 
