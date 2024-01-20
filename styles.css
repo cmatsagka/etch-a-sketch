@@ -1,5 +1,5 @@
 html, body {
-    height: 100vh;
+    height: 100%;
     margin: auto;
     width: 960px;
   }
@@ -18,7 +18,5 @@ html, body {
 .cell {
     border: 1px solid black;
     flex-basis: calc(25% - 40px);
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+
 }
