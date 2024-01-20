@@ -13,4 +13,8 @@ for (i = 0; i < gridSize; i++){
     gridCell.addEventListener('mouseenter', () => {
         gridCell.style.backgroundColor = 'black';
     });
+    gridCell.addEventListener('mouseleave', () => {
+        gridCell.style.backgroundColor = 'white';
+    });
 }
+
