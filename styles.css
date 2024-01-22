@@ -5,18 +5,22 @@ html, body {
   }
 
 #container {
-    display: flex;
 
     border: 1px solid black;
     min-height: 100%;
     width: 960px;
+
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    flex-direction: row;   
-    justify-content: center;
 }
 
-.cell {
+.column {
     border: 1px solid black;
-    flex-basis: calc(25% - 40px);
-
+    flex-basis: 100%;
+    flex: 1;
 }
+

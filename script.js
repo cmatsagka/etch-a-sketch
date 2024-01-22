@@ -1,30 +1,28 @@
+let gridSize = prompt("Enter square size: ", "4");
+
 const container = document.querySelector('#container');
-
-let input = prompt("Enter square size: ", "4");
-let gridSize = input ** 2;
-
-let containerWidth = container.offsetWidth;
-let containerHeight = container.offsetHeight;
-let cellWidth = containerWidth/input;
-let cellHeight = containerHeight/input;
+let count = 0;
 
 for (i = 0; i < gridSize; i++){
-    const gridCell = document.createElement('div');
-    gridCell.classList.add('cell');
 
-    container.appendChild(gridCell);
-    gridCell.textContent = "cell" + " " + i;
+    const gridRow = document.createElement('div');
+    gridRow.classList.add('row');
+    container.appendChild(gridRow);
 
-    gridCell.addEventListener('mouseenter', () => {
-        gridCell.style.backgroundColor = 'black';
-    });
-    gridCell.addEventListener('mouseleave', () => {
-        gridCell.style.backgroundColor = 'white';
-    });
-
-    gridCell.style.width = cellWidth;
-    gridCell.style.height = cellHeight;
-
-    console.log(cellWidth, cellHeight);
+    for (j = 0; j < gridSize; j++){
+        const gridColumn = document.createElement('div');
+        gridColumn.classList.add('column');
+    
+        gridRow.appendChild(gridColumn);
+        gridColumn.textContent = "cell" + " " + count;
+    
+        gridColumn.addEventListener('mouseenter', () => {
+            gridColumn.style.backgroundColor = 'black';
+        });
+        gridColumn.addEventListener('mouseleave', () => {
+            gridColumn.style.backgroundColor = 'white';
+        });
+        count++;
+    }   
 }
 
