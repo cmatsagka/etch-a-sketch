@@ -1,16 +1,29 @@
 const container = document.querySelector('#container');
-const btn = document.querySelector('#buttonResize');
+const btnResize = document.querySelector('.btnResize');
+const btnBlackColor = document.querySelector('.btnBlackColor');
+const btnRandomColor = document.querySelector('.btnRandomColor');
+const btnProgDark = document.querySelector('.btnProgDark');
+
 let gridSize = 16;
+let color = 'black';
 
 createGrid(gridSize);
 
-btn.addEventListener('click', () => {
+btnResize.addEventListener('click', () => {
 
     do {
         gridSize = prompt("Enter square size: ", "16");
     }while (gridSize > 100);
 
     createGrid(gridSize);
+});
+
+btnBlackColor.addEventListener('click', () => {
+    color = 'black';
+});
+
+btnRandomColor.addEventListener('click', () => {
+    color = `#${Math.floor(Math.random() * 0xffffff).toString(16)}`;
 });
 
 function createGrid(gridSize) {
@@ -29,7 +42,7 @@ function createGrid(gridSize) {
         container.appendChild(gridCell);
     
         gridCell.addEventListener('mouseenter', () => {
-            gridCell.style.backgroundColor = 'black';
+            gridCell.style.backgroundColor = color;
             });
     
         // gridCell.addEventListener('mouseleave', () => {
