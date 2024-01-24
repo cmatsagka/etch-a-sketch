@@ -12,25 +12,21 @@
 html, body {
     height: 100%;
     margin: auto;
-    width: 960px;
   }
 
 #container {
     border: 1px solid black;
-    max-height: 960px;
-    max-width: 960px;
+    height: 600px;
+    width: 600px;
     margin: 0 auto;
-}
 
-.row {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
-.column {
-    border: 1px solid black;
-    flex-basis: 100%;
+.cell {
+    border: 1px solid red;
     flex: 1;
 }
 

@@ -1,28 +1,26 @@
-let gridSize = prompt("Enter square size: ", "4");
+let gridSize = 32;
+
+const btn = document.querySelector('#buttonResize');
+btn.addEventListener('click', () => {
+    gridSize = prompt("Enter square size: ", " ");
+});
 
 const container = document.querySelector('#container');
-let count = 0;
 
-for (i = 0; i < gridSize; i++){
-
-    const gridRow = document.createElement('div');
-    gridRow.classList.add('row');
-    container.appendChild(gridRow);
-
-    for (j = 0; j < gridSize; j++){
-        const gridColumn = document.createElement('div');
-        gridColumn.classList.add('column');
+for (i = 0; i < gridSize ** 2; i++) {
+    const gridCell = document.createElement('div');
+    gridCell.classList.add('cell');
+    gridCell.style.flexBasis = 100 / gridSize + "%";
     
-        gridRow.appendChild(gridColumn);
-        gridColumn.textContent = "cell" + " " + count;
-    
-        gridColumn.addEventListener('mouseenter', () => {
-            gridColumn.style.backgroundColor = 'black';
+    console.log(gridCell.style.flexBasis);
+    container.appendChild(gridCell);
+
+    gridCell.addEventListener('mouseenter', () => {
+        gridCell.style.backgroundColor = 'black';
         });
-        gridColumn.addEventListener('mouseleave', () => {
-            gridColumn.style.backgroundColor = 'white';
-        });
-        count++;
-    }   
+
+    gridCell.addEventListener('mouseleave', () => {
+        gridCell.style.backgroundColor = 'white';
+    });
 }
 
