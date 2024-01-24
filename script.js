@@ -6,7 +6,10 @@ createGrid(gridSize);
 
 btn.addEventListener('click', () => {
 
-    gridSize = prompt("Enter square size: ", "16");
+    do {
+        gridSize = prompt("Enter square size: ", "16");
+    }while (gridSize > 100);
+
     createGrid(gridSize);
 });
 
@@ -29,8 +32,8 @@ function createGrid(gridSize) {
             gridCell.style.backgroundColor = 'black';
             });
     
-        gridCell.addEventListener('mouseleave', () => {
-            gridCell.style.backgroundColor = 'white';
-        });
+        // gridCell.addEventListener('mouseleave', () => {
+        //     gridCell.style.backgroundColor = 'white';
+        // });
     }
 }
