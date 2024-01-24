@@ -2,19 +2,16 @@ const container = document.querySelector('#container');
 const btnResize = document.querySelector('.btnResize');
 const btnBlackColor = document.querySelector('.btnBlackColor');
 const btnRandomColor = document.querySelector('.btnRandomColor');
-const btnProgDark = document.querySelector('.btnProgDark');
 
 let gridSize = 16;
 let color = 'black';
-
 createGrid(gridSize);
 
 btnResize.addEventListener('click', () => {
-
     do {
         gridSize = prompt("Enter square size: ", "16");
     }while (gridSize > 100);
-
+    
     createGrid(gridSize);
 });
 
@@ -24,6 +21,7 @@ btnBlackColor.addEventListener('click', () => {
 
 btnRandomColor.addEventListener('click', () => {
     color = `#${Math.floor(Math.random() * 0xffffff).toString(16)}`;
+    console.log(color);
 });
 
 function createGrid(gridSize) {
@@ -44,9 +42,5 @@ function createGrid(gridSize) {
         gridCell.addEventListener('mouseenter', () => {
             gridCell.style.backgroundColor = color;
             });
-    
-        // gridCell.addEventListener('mouseleave', () => {
-        //     gridCell.style.backgroundColor = 'white';
-        // });
     }
 }
