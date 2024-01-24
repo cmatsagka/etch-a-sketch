@@ -1,8 +1,10 @@
 const container = document.querySelector('#container');
 const btn = document.querySelector('#buttonResize');
+let gridSize = 16;
+
+createGrid(gridSize);
 
 btn.addEventListener('click', () => {
-    let gridSize;
 
     gridSize = prompt("Enter square size: ", "16");
     createGrid(gridSize);
