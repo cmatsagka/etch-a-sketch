@@ -20,23 +20,21 @@ h1 {
     background-color: rgb(237, 240, 243);
     border: 2px solid rgb(201, 93, 93);
     height: 720px;
-    width: auto;
+    width: 720px;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
 .row {
-    background-color: rgb(201, 93, 93);
-    border: 1px solid rgb(237, 240, 243);
     flex: 1;
     flex-basis: 100%;
     display: flex;
 }
 
 .cell {
-    background-color: rgb(51, 53, 69);
-    border: 1px solid rgb(237, 240, 243);
+    border: 1px solid rgb(201, 93, 93);
     flex: 1;
     flex-basis: 100%;
 }
