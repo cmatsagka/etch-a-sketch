@@ -1,10 +1,10 @@
 function createGrid(container, size){
     
     for (let i = 0; i < size; i++){
-        let gridCell = document.createElement('div');
-        gridCell.classList.add('cell');
+        let gridRow = document.createElement('div');
+        gridRow.classList.add('row');
 
-        container.appendChild(gridCell);
+        container.appendChild(gridRow);
     }
 }
 
