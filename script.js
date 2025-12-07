@@ -9,6 +9,10 @@ function createGrid(container, size){
             gridCell.classList.add('cell');
         
             gridRow.appendChild(gridCell);
+
+            gridCell.addEventListener('mouseenter', (e) => {
+                gridCell.setAttribute('style', 'background: white');
+            })
         }
         container.appendChild(gridRow);   
     };
