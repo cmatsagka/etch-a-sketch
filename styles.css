@@ -22,3 +22,10 @@ h1 {
     height: 720px;
     width: auto;
 }
+
+.cell {
+    background-color: rgb(201, 93, 93);
+    border: 1px solid rgb(237, 240, 243);
+    height: 20px;
+    width: auto;
+}
