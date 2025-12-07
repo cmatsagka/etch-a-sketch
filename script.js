@@ -4,8 +4,14 @@ function createGrid(container, size){
         let gridRow = document.createElement('div');
         gridRow.classList.add('row');
 
-        container.appendChild(gridRow);
-    }
+        for (let j = 0; j < size; j++) {
+            let gridCell = document.createElement('div');
+            gridCell.classList.add('cell');
+        
+            gridRow.appendChild(gridCell);
+        }
+        container.appendChild(gridRow);   
+    };
 }
 
 const container = document.querySelector('.container');

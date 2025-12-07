@@ -31,4 +31,12 @@ h1 {
     border: 1px solid rgb(237, 240, 243);
     flex: 1;
     flex-basis: 100%;
+    display: flex;
+}
+
+.cell {
+    background-color: rgb(51, 53, 69);
+    border: 1px solid rgb(237, 240, 243);
+    flex: 1;
+    flex-basis: 100%;
 }
