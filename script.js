@@ -11,7 +11,7 @@ function createGrid(container, size){
             gridRow.appendChild(gridCell);
 
             gridCell.addEventListener('mouseenter', (e) => {
-                gridCell.setAttribute('style', 'background: white');
+                gridCell.setAttribute('style', 'background: black');
             })
         }
         container.appendChild(gridRow);   
