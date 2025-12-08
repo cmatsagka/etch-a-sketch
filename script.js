@@ -18,13 +18,22 @@ function createGrid(container, size){
     };
 }
 
-const container = document.querySelector('.container');
 let size = 16;
 
+const container = document.querySelector('.container');
 createGrid(container, size);
 
 const btn = document.querySelector('button');
 
 btn.addEventListener('click', () => {
-    prompt('Type grid size!');
+    
+    size = prompt('Type grid size!');
+    removeAllChildNodes(container);
+    createGrid(container, size);
 });
+
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
