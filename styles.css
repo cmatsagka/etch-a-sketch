@@ -17,6 +17,17 @@ h1 {
     padding: 24px;
 }
 
+button {
+    text-align: center;
+    color: rgb(201, 93, 93);
+    font-size: 16px;
+    margin: 12px auto;
+    padding: 6px 12px;
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(201, 93, 93);
+}
+
 .container {
     background-color: rgb(255, 255, 255);
     border: 2px solid rgb(201, 93, 93);
