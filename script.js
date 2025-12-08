@@ -28,8 +28,14 @@ const btn = document.querySelector('button');
 btn.addEventListener('click', () => {
     
     size = prompt('Type grid size!');
+    
+    while(size > 100){
+        size = prompt('Type grid size! Maximum 100');
+    };
+
     removeAllChildNodes(container);
     createGrid(container, size);
+
 });
 
 function removeAllChildNodes(parent) {
