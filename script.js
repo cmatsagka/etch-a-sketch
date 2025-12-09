@@ -79,9 +79,10 @@ function getDarkerColor(){
 
     if (!isRandomClicked){
         color = 'rgb(0, 0, 0, ' + opacity + '% )';
+    }else{
+        color = 'rgb(' + r + ',' + g + ',' + b + ', ' + opacity + '% )';
     }
 
-    color = 'rgb(' + r + ',' + g + ',' + b + ', ' + opacity + '% )';
     removeAllChildNodes(container);
     createGrid(container, size, color);
 }
