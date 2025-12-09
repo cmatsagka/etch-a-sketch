@@ -20,15 +20,16 @@ function createGrid(container, size, color){
 }
 
 let size = 16;
-const color = 'black';
+let color = 'black';
 
 const container = document.querySelector('.container');
 createGrid(container, size, color);
 
 const btn = document.querySelector('.gridBtn');
 
-btn.addEventListener('click', () => {
-    
+btn.addEventListener('click', getGridSize4);
+
+function getGridSize() {
     size = prompt('Type grid size!');
     
     while(size > 100){
@@ -37,19 +38,17 @@ btn.addEventListener('click', () => {
     
     removeAllChildNodes(container);
     createGrid(container, size, color);
-    
-});
+}
 
 const randomBtn = document.querySelector('.randomBtn');
-randomBtn.addEventListener('click, randomizeColors');
+randomBtn.addEventListener('click', randomizeColors);
+console.log('Random button clicked');
 
 function removeAllChildNodes(parent) {
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
     }
 }
-
-
 
 function randomizeColors(){
     color = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')'; 
