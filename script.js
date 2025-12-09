@@ -1,4 +1,4 @@
-function createGrid(container, size){
+function createGrid(container, size, color){
     
     for (let i = 0; i < size; i++){
         let gridRow = document.createElement('div');
@@ -11,7 +11,8 @@ function createGrid(container, size){
             gridRow.appendChild(gridCell);
 
             gridCell.addEventListener('mouseenter', (e) => {
-                gridCell.setAttribute('style', 'background: black');
+                gridCell.style.backgroundColor = color;
+                // gridCell.setAttribute('style', 'background: color');
             })
         }
         container.appendChild(gridRow);   
@@ -19,11 +20,15 @@ function createGrid(container, size){
 }
 
 let size = 16;
+const color = 'black';
 
 const container = document.querySelector('.container');
-createGrid(container, size);
-
 const btn = document.querySelector('button');
+const randomBtn = document.querySelector('.randomBtn');
+
+createGrid(container, size, color);
+
+randomBtn.addEventListener('click, randomizeColors');
 
 btn.addEventListener('click', () => {
     
@@ -32,14 +37,18 @@ btn.addEventListener('click', () => {
     while(size > 100){
         size = prompt('Type grid size! Maximum 100');
     };
-
+    
     removeAllChildNodes(container);
-    createGrid(container, size);
-
+    createGrid(container, size, color);
+    
 });
 
 function removeAllChildNodes(parent) {
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
     }
+}
+
+function randomizeColors(){
+    color = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')'; 
 }
