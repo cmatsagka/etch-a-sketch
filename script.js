@@ -1,6 +1,8 @@
 
 let size = 16;
-let color = 'black';
+let opacity = 100;
+let color = 'rgb(0, 0, 0, ' + opacity + '% )';
+let count = 1;
 
 const container = document.querySelector('.container');
 createGrid(container, size, color);
@@ -10,6 +12,9 @@ btn.addEventListener('click', getGridSize);
 
 const randomBtn = document.querySelector('.randomBtn');
 randomBtn.addEventListener('click', randomizeColors);
+
+const progDark = document.querySelector('.progDark');
+progDark.addEventListener('click', getDarkerColor);
 
 function createGrid(container, size, color){
     for (let i = 0; i < size; i++){
@@ -48,7 +53,17 @@ function removeAllChildNodes(parent) {
 }
 
 function randomizeColors(){
-    color = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')'; 
+    color = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ', ' + opacity + '% )'; 
     removeAllChildNodes(container);
     createGrid(container, size, color);
+}
+
+function getDarkerColor(){
+
+    if (count == 0){
+        opacity = 10;
+    }else if (count < 10) {
+        opacity += 10;
+        count++;
+    }
 }
