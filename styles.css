@@ -21,11 +21,18 @@ button {
     text-align: center;
     color: rgb(201, 93, 93);
     font-size: 16px;
-    margin: 12px auto;
+    /* margin: 12px auto; */
     padding: 6px 12px;
     border-radius: 4px;
     background-color: rgb(255, 255, 255);
     border: 2px solid rgb(201, 93, 93);
+}
+
+.menu {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin: 24px 24px;
 }
 
 .container {
